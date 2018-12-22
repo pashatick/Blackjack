@@ -10,12 +10,10 @@ function getCard(){
 	return card[getRandomInt(0, card.length - 1)]
 }
 
-var pl = [getCard(), getCard(), getCard()]
+var pl = [getCard(), getCard()]
 var dl = [getCard(), getCard()]
 
 alert("карты диллера" + dl.join('') + "карты игрока"+ pl.join(''))
-
-
 
 function getSum(arr){
 	var sum = 0;
@@ -33,11 +31,11 @@ function getSum(arr){
 		}else if (arr[i]=="10") {
 			n = 10;
 		}else if (arr[i]=="J") {
-			n = 2;
+			n = 10;
 		}else if (arr[i]=="Q") {
-			n = 3;
+			n = 10;
 		}else if (arr[i]=="K") {
-			n = 4;
+			n = 10;
 		}else if (arr[i]=="A") {
 			n = 11
 		}
@@ -49,7 +47,6 @@ return sum
 var dealerSum = getSum(dl)
 var palayerSum = getSum(pl)
 
-
 function getStatus(){
 	return ("У диллера-" +  dealerSum  +  "У игрока-"  +  palayerSum)
 }
@@ -57,28 +54,19 @@ alert(getStatus());
 
 var e = prompt("some card?");
 
-do{
-	if (e = "da"){ 
-		pl.push(getCard())
-	var dealerSum = getSum(dl)
-	var palayerSum = getSum(pl)
+if (e == "da"){ 
+	pl.push(getCard())
+var dealerSum = getSum(dl)
+var palayerSum = getSum(pl)
 
-	getSum(pl)
-	alert(getStatus())
-	}
-}while(palayerSum<=21){
-	if(palayerSum>dealerSum){
-		alert("YOU WIN!!!");
-	}else if(palayerSum==21){
-		alert("YOU WIN!!!")
-	}else if(palayerSum<dealerSum){
-		alert("you lose(((")
-	}else if(palayerSum>21){
-		aler("you lose((((")
-	}
+getSum(pl)
+alert(getStatus())
+}else{
 }
-
-alert(123)
-
-
+	
+if(palayerSum>dealerSum && palayerSum<22 || palayerSum==21){
+	alert("YOU WIN!!!");
+}else if(palayerSum<dealerSum || palayerSum>21){
+	alert("you lose(((")
+}
 </script>
