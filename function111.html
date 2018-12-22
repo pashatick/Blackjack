@@ -12,7 +12,11 @@ function getCard(){
 
 var player = [getCard(), getCard()]
 var dealer = [getCard(), getCard()]
+<<<<<<< HEAD
 alert("карты диллера" + dealer + "карты игрока"+ player)
+=======
+alert("карты диллера" + dealer.join("") + "карты игрока"+ player.join(""))
+>>>>>>> доработка
 
 function getSum(arr){
 	var sum = 0;
@@ -47,8 +51,15 @@ var palayerSum = getSum(player)
 function getStatus(){
 	return ("У диллера-" +  dealerSum  +  "У игрока-"  +  palayerSum)
 }
+<<<<<<< HEAD
 alert(getStatus())
 var addCard = prompt("еще карту?")
+=======
+
+
+
+
+>>>>>>> доработка
 
 
 
